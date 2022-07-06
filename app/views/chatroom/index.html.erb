@@ -20,17 +20,18 @@
           <div class="ui feed">
             <h4 class="ui header">Chat Room</h4>
             <%= render @messages %>
+            <%# form partial %>
           </div>
         </div>
         <div class="extra content">
-          <form class="ui reply form">
+          <%= form_for(@message, html: {class:"ui reply form", role: "form"}, url: message_path) do |f| %>
             <div class="field">
               <div class="ui fluid icon input">
-                <input type="text" placeholder="Send Message...">
-                <i class="bordered teal edit icon"></i>
+                <%= f.text_field :body, placeholder: "Send a message..." %>
+                <%= f.button class: "ui teal submit edit icon button" %>
               </div>
             </div>     
-          </form>
+          <% end %>
         </div>
       </div>
     </div>
