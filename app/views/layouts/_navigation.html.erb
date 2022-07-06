@@ -5,8 +5,10 @@
   <div class="item">
     <% if logged_in? %>
       <%= button_to "Logout", logout_path, method: :delete, class: "ui teal button" %>
-    <% else %>
-      <%= button_to "Login", "/login", class: "ui teal button" %>
+    <% end %>
+  <%# Prevent nil class %>
+    <% if !logged_in? %>
+      <%= link_to "Log in", login_path, class: "ui teal button" %>
     <% end %>
   </div>
 </div>
