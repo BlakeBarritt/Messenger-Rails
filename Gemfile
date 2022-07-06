@@ -25,6 +25,7 @@ gem 'net-smtp'
 
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+gem "hirb"
 
 
 # Use Active Storage variant
